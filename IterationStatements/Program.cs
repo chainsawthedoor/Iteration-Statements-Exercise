@@ -46,16 +46,16 @@
         //    - Method Signature: bool IsEven(int number)
         //    - Returns true if the number is even, false if odd.
 
-        public static void IsEven(int num)
+        public static bool IsEven(int num)
         {
             if (num % 2 == 0)
             {
                 Console.WriteLine($"{num} is even");
+                return true;
             }
-            else
-            {
-                Console.WriteLine($"{num} is odd");
-            }
+            
+            Console.WriteLine($"{num} is odd");
+            return false;
         }
         
         // 5. Write a method that checks if a given number is positive or negative.
