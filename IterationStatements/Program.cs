@@ -29,16 +29,17 @@
         //    - Method Signature: bool AreNumbersEqual(int num1, int num2)
         //    - Returns true if the numbers are equal, false otherwise.
 
-        public static void AreNumbersEqual(int num1, int num2)
+        public static bool AreNumbersEqual(int num1, int num2)
         {
             if (num1 == num2)
             {
                 Console.WriteLine($"{num1} and {num2} are the equal!");
+                return true;
             }
-            else
-            {
-                Console.WriteLine($"{num1} and {num2} are not equal!");
-            }
+            
+            Console.WriteLine($"{num1} and {num2} are not equal!");
+            return false;
+
         }
         
         // 4. Write a method that checks if a given number is even or odd.
@@ -61,20 +62,20 @@
         //    - Method Signature: bool IsPositive(int number)
         //    - Returns true if the number is positive, false if negative.
 
-        public static void IsPositive(int num)
+        public static bool IsPositive(int num)
         {
             if (num > 0)
             {
                 Console.WriteLine($"{num} is positive");
+                return true;
             }
             else if (num == 0)
             {
                 Console.WriteLine($"{num} is zero");
             }
-            else
-            {
-                Console.WriteLine($"{num} is negative");
-            }
+            
+            Console.WriteLine($"{num} is negative");
+            return false;
         }
         
         // 6. Write a method that reads the age of a candidate and determines if they are eligible to vote.
@@ -82,7 +83,7 @@
         //    - Returns true if the candidate can vote, false otherwise.
         //    - Hint: Use `int.Parse()` or the safer `int.TryParse()` for extra practice in handling user input.
 
-        public static void CanVote()
+        public static bool CanVote()
         {
             Console.WriteLine("Please enter your age:");
             var canParse = int.TryParse(Console.ReadLine(), out int userAge);
@@ -96,12 +97,11 @@
             if (userAge >= 18)
             {
                 Console.WriteLine($"Congrats! {userAge} years old is old enough to vote!");
-            }
-            else
-            {
-                Console.WriteLine($"Sorry, {userAge} is not old enough to vote.");
+                return true;
             }
             
+            Console.WriteLine($"Sorry, {userAge} is not old enough to vote.");
+            return false;
         }
         
         // Heatin' Up Section:
@@ -109,7 +109,7 @@
         //    - Method Signature: bool IsInRange(int number)
         //    - Returns true if the number is within the range, false otherwise.
 
-        public static void IsInRange()
+        public static bool IsInRange()
         {
             Console.WriteLine("Please enter a number:");
             var canParse = int.TryParse(Console.ReadLine(), out int userNum);
@@ -124,10 +124,9 @@
             {
                 Console.WriteLine($"{userNum} is in the 10 range.");
             }
-            else
-            {
-                Console.WriteLine($"{userNum} is not in the 10 range.");
-            }
+            
+            Console.WriteLine($"{userNum} is not in the 10 range.");
+            return false;
         }
         
         // 2. Write a method that displays the multiplication table (from 1 to 12) for a given integer.
